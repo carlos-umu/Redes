@@ -1,0 +1,71 @@
+//MENSAJES DE MI PROTOCOLO
+
+SOLICITUD PING
+acierto------------------------------------
+	CLIENTE envia ping 
+
+		operation: ping\n  
+		protocolID: MORTADELA\n  		
+		\n
+				
+	DIRECTORIO 
+		operation: welcome\n
+		\n
+
+fallo--------------------------------------------
+	CLIENTE envia ping 
+
+		operation: ping\n  
+		protocolID: AAAAA\n  		
+		\n
+				
+	DIRECTORIO 
+		operation: invalid\n
+		\n
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SOLICITUD FILELIST
+acierto----------------------------------------------------------------
+	CLIENTE
+		operation: filelist\n
+		\n
+	DIRECTORIO
+		operation: availableFiles\n
+		filename: document.pdf\n
+		size: 142544\n
+		hash: abc123def456\n
+		\n
+
+
+lista vacia nada
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//SOLICITUD SERVE (envias todo tu estado de ficheros)
+acierto----------------------------------------------------------------
+	CLIENTE
+		operation: serve\n                     //port: 10000\n EL PUERTO ES FIJO,ESTA ACORDADO DE ANTEM							
+		\n
+	DIRECTORIO
+		operation: success\n
+		\n
+		
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//SOLICITUD DOWNLOAD
+acierto----------------------------------------------------------------
+	CLIENTE
+		operation: QUIEN LO TIENE \n
+		filename: docu\n			(subcadena del nombre)
+		\n
+	DIRECTORIO
+		operation: serverList\n 
+		1)
+		documento.pdf : cadena de ips que lo contienen
+		2)
+		server: 192.168.1.1:10000\n  //DIRECTORIO TE RESPONDE CON LA LISTA de ips que contengan documentos con esa subcadena
+		server: 192.168.1.2:10000\n
+		\n
+		
+
+		
+		
